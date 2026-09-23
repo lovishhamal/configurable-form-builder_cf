@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.formButton {
+  padding: 4px;
+  background-color: green;
+  border-radius: 8px;
+  color: white;
+}

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.formPanel {
+  flex: 1;
+  min-width: 0;
+  background-color: red;
+  padding: 12px;
+}
+
+.previewPanel {
+  flex: 1;
+  min-width: 0;
+  background-color: green;
+  padding: 12px;
+}
