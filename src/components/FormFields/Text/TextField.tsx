@@ -13,8 +13,12 @@ function TextField({ field }: { field: FormField }) {
         type="text"
         placeholder="Enter text"
         required={field.required}
+        minLength={field.min}
+        max={field.max}
       />
-      <div>{field.required && "This field is required"}</div>
+      <div className={styles.required}>
+        {field.required && "This field is required"}
+      </div>
     </div>
   );
 }

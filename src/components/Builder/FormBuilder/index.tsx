@@ -10,7 +10,7 @@ function FormBuilder() {
   const [error, setError] = useState<null | string>(null);
 
   const onClickFormFields = (field: FormField) => {
-    addField(null, field.type);
+    addField(null, field);
   };
 
   const onClickImport = () => {

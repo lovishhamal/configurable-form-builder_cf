@@ -28,8 +28,8 @@ export type FormField = {
 type FormContextType = {
   formFields: Record<string, unknown>[];
   formData: FormData[];
-  setData: (field: FormField[]) => void;
-  addField: (parentId: string | null, type: string) => void;
+  setData: (data: FormData[]) => void;
+  addField: (parentId: string | null, field: FormField) => void;
   deleteField: (parentId: string | null, id: string) => void;
   moveFieldUp: (id: string) => void;
   moveFieldDown: (id: string) => void;
@@ -41,12 +41,14 @@ export function FormProvider({ children }: { children: ReactNode }) {
   const [formFields, setFormFields] = useState<FormField[]>(FORM_DATA);
   const [formData, setFormData] = useState<FormData[]>([]);
 
-  const recursive = (type: string) => ({
+  const recursive = (field: FormField) => ({
     id: Math.random().toString(36).slice(2),
-    type,
-    label: type === "group" ? "Group" : type,
-    required: false,
-    ...(type === "group" ? { children: [] } : {}),
+    type: field.type,
+    label: field.type === "group" ? "Group" : field.type,
+    required: field.required,
+    min: field.min,
+    max: field.max,
+    ...(field.type === "group" ? { children: [] } : {}),
   });
 
   const mapTree = (list: any, id: string, fn: (item: FormData) => FormData) =>
@@ -58,18 +60,22 @@ export function FormProvider({ children }: { children: ReactNode }) {
           : f,
     );
 
-  const addTo = (list: FormData[], parentId: string | null, type: string) => {
+  const addTo = (
+    list: FormData[],
+    parentId: string | null,
+    field: FormField,
+  ) => {
     return parentId === null
-      ? [...list, recursive(type)]
+      ? [...list, recursive(field)]
       : mapTree(list, parentId, (item) => ({
           ...item,
-          children: [...(item.children || []), recursive(type)],
+          children: [...(item.children || []), recursive(field)],
         }));
   };
 
   const addField = useCallback(
-    (parentId: string | null, type: string) => {
-      setFormData((prev) => addTo(prev, parentId, type));
+    (parentId: string | null, field: FormField) => {
+      setFormData((prev) => addTo(prev, parentId, field));
     },
     [formData],
   );

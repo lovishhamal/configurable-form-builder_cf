@@ -6,7 +6,7 @@ function GroupField({ field }: { field: FormField }) {
   const { formFields, addField, deleteField, moveFieldUp, moveFieldDown } =
     useFormContext();
 
-  const onClickFormFields = (value: string) => {
+  const onClickFormFields = (value: FormField) => {
     addField(field.id, value);
   };
 
@@ -67,7 +67,7 @@ function GroupField({ field }: { field: FormField }) {
                 type="button"
                 key={formField.id}
                 className={styles.addButton}
-                onClick={() => onClickFormFields(formField.type)}
+                onClick={() => onClickFormFields(formField)}
               >
                 <span className={styles.plus}>+</span>
                 {formField.label}

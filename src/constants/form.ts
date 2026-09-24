@@ -5,12 +5,15 @@ export const FORM_DATA: FormField[] = [
     id: "1",
     type: "text",
     label: "TextField",
+    required: true,
+    min: 5,
+    max: 10,
   },
   {
     id: "2",
     type: "number",
     label: "NumberField",
-
+    required: false,
     min: 0,
     max: 120,
   },
@@ -18,6 +21,7 @@ export const FORM_DATA: FormField[] = [
     id: "3",
     type: "group",
     label: "Group",
+    required: false,
   },
 ];
 
