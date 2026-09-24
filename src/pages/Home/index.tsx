@@ -6,7 +6,6 @@ import PreviewComponent from "../../components/Preview";
 const Home = () => {
   return (
     <>
-      <div>Configurable form Builder</div>
       <div className={styles.container}>
         <div className={styles.formPanel}>
           <FormComponent />

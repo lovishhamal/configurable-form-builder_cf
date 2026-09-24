@@ -1,20 +1,69 @@
-export const FORM_DATA = [
+import type { FormField } from "../context/FormContext";
+
+export const FORM_DATA: FormField[] = [
   {
-    key: "1",
-    type: "textField",
-    label: "Text Field",
+    id: "1",
+    type: "text",
+    label: "TextField",
   },
-  { key: "2", type: "numericField", label: "Numeric Field" },
-  // {
-  //   key: "3",
-  //   type: "group",
-  //   children: [
-  //     {
-  //       type: "text-field",
-  //     },
-  //     {
-  //       type: "numeric-field",
-  //     },
-  //   ],
-  // },
+  {
+    id: "2",
+    type: "number",
+    label: "NumberField",
+
+    min: 0,
+    max: 120,
+  },
+  {
+    id: "3",
+    type: "group",
+    label: "Group",
+  },
 ];
+
+// export const FORM_DATA = [
+//   {
+//     id: "1",
+//     type: "text",
+//     label: "TextField",
+//     required: true,
+//   },
+//   {
+//     id: "2",
+//     type: "number",
+//     label: "NumberField",
+//     required: false,
+//     min: 0,
+//     max: 120,
+//   },
+//   {
+//     id: "3",
+//     type: "group",
+//     label: "Group",
+//     required: false,
+//     children: [
+//       {
+//         id: "4",
+//         type: "text",
+//         label: "TextField",
+//         required: true,
+//       },
+//       {
+//         id: "5",
+//         type: "number",
+//         label: "NumberField",
+//         required: false,
+//       },
+//       {
+//         id: "6",
+//         type: "group",
+//         label: "Geo",
+//         required: false,
+//         children: [
+//           { id: "7", type: "number", label: "TextField", required: false },
+//           { id: "8", type: "number", label: "TextField", required: false },
+//         ],
+//       },
+//     ],
+//   },
+// ];

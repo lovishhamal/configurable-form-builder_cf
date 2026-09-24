@@ -1,0 +1,109 @@
+.container {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.formButton {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #dbe1e8;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  background: #f3f4f6;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.tab {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: #f8fafc;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: #f3f4f6;
+}
+
+.active {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #4f46e5;
+}
+
+.jsonContainer {
+  margin-top: 12px;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 12px;
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #1f2937;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.actionButton {
+  margin-top: 10px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 7px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background: #4338ca;
+}
+
+.error {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 13px;
+}
